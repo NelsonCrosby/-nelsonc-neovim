@@ -4,3 +4,6 @@
 [submodule "repo/nerdtree"]
 	path = repo/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "repo/editorconfig"]
+	path = repo/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
