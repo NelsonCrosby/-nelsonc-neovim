@@ -1,3 +1,6 @@
 [submodule "repo/pathogen"]
 	path = repo/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "repo/nerdtree"]
+	path = repo/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
