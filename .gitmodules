@@ -7,3 +7,6 @@
 [submodule "repo/editorconfig"]
 	path = repo/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "repo/go"]
+	path = repo/go
+	url = https://github.com/fatih/vim-go.git

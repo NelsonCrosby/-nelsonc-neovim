@@ -4,8 +4,9 @@ inoremap jk <ESC>
 let mapleader = "\<Space>"
 
 filetype plugin indent on
-set shiftwidth=4
-set expandtab
+" set shiftwidth=4
+" set expandtab
+set textwidth=76
 
 syntax on
 set encoding=utf8
