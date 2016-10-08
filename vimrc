@@ -19,6 +19,14 @@ set encoding=utf8
 map <leader>t :e .<CR>
 map <leader>T :e! .<CR>
 
+" Enable statusline
+set ls=2
+" Statusline symbols
+if has('gui_running')
+  let g:airline_powerline_fonts = 1
+  set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+endif
+
 " NERDTree not being auto-enabled because I'm not quite satisfied yet
 " Auto-enable NERDTree if no file specified on the command line
 "autocmd StdinReadPre * let s:std_in=1

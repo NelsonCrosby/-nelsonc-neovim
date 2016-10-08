@@ -10,3 +10,9 @@
 [submodule "repo/go"]
 	path = repo/go
 	url = https://github.com/fatih/vim-go.git
+[submodule "repo/airline"]
+	path = repo/airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "repo/powerline-fonts"]
+	path = repo/powerline-fonts
+	url = https://github.com/powerline/fonts.git
