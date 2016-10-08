@@ -24,7 +24,6 @@ set ls=2
 " Statusline symbols
 if has('gui_running')
   let g:airline_powerline_fonts = 1
-  set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
 endif
 
 " NERDTree not being auto-enabled because I'm not quite satisfied yet
