@@ -1,12 +1,16 @@
 execute pathogen#infect()
+set modeline
 
 inoremap jk <ESC>
 let mapleader = "\<Space>"
 
 filetype plugin indent on
-" set shiftwidth=4
-" set expandtab
 set textwidth=76
+
+autocmd FileType * set ts=2 sw=2 et
+autocmd FileType make setlocal ts=8 noet
+autocmd FileType python set ts=4 sw=4
+autocmd FileType go set ts=8 noet
 
 syntax on
 set encoding=utf8
