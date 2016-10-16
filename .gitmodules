@@ -16,3 +16,6 @@
 [submodule "repo/powerline-fonts"]
 	path = repo/powerline-fonts
 	url = https://github.com/powerline/fonts.git
+[submodule "repo/yajs"]
+	path = repo/yajs
+	url = https://github.com/othree/yajs.vim.git
