@@ -19,3 +19,6 @@
 [submodule "repo/yajs"]
 	path = repo/yajs
 	url = https://github.com/othree/yajs.vim.git
+[submodule "repo/surround"]
+	path = repo/surround
+	url = https://github.com/tpope/vim-surround.git
