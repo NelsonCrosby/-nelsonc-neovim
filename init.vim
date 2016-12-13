@@ -22,6 +22,7 @@ set textwidth=76
 autocmd FileType * set ts=2 sw=2 et
 autocmd FileType make setlocal ts=8 sw=0 noet
 autocmd FileType python set ts=4 sw=4
+autocmd FileType lua set ts=4 sw=4
 autocmd FileType go set ts=8 sw=0 noet
 
 syntax on
