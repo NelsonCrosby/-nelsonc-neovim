@@ -39,6 +39,19 @@ if has('gui_running')
   let g:airline_powerline_fonts = 1
 endif
 
+" nvim-specific config
+if has('nvim')
+  set splitbelow
+  set bufhidden=delete
+  tnoremap <Esc> <C-\><C-n>
+
+  tmap <A-h> <Esc><A-h>
+  tmap <A-j> <Esc><A-j>
+  tmap <A-k> <Esc><A-k>
+  tmap <A-l> <Esc><A-l>
+  "tmap jk <Esc>
+endif
+
 " NERDTree not being auto-enabled because I'm not quite satisfied yet
 " Auto-enable NERDTree if no file specified on the command line
 "autocmd StdinReadPre * let s:std_in=1
