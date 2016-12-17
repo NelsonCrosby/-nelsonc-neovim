@@ -22,3 +22,6 @@
 [submodule "repo/surround"]
 	path = repo/surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "repo/codi"]
+  path = repo/codi
+  url = https://github.com/metakirby5/codi.vim.git
