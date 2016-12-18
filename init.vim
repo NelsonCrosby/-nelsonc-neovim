@@ -39,6 +39,11 @@ if has('gui_running')
   let g:airline_powerline_fonts = 1
 endif
 
+" Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html EmmetInstall
+let g:user_emmet_leader_key = '<C-e>'
+
 " nvim-specific config
 if has('nvim')
   set splitbelow

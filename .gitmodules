@@ -25,3 +25,6 @@
 [submodule "repo/codi"]
   path = repo/codi
   url = https://github.com/metakirby5/codi.vim.git
+[submodule "repo/emmet"]
+	path = repo/emmet
+	url = https://github.com/mattn/emmet-vim.git
