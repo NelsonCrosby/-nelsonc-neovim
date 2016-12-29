@@ -28,3 +28,6 @@
 [submodule "repo/emmet"]
 	path = repo/emmet
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "repo/jsx"]
+	path = repo/jsx
+	url = https://github.com/mxw/vim-jsx.git
