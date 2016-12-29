@@ -1,8 +1,9 @@
 execute pathogen#infect()
-set modeline
+set modeline number cursorline
 
 inoremap jk <ESC>
-let mapleader = "\<Space>"
+nnoremap <ESC><ESC> :nohlsearch<CR>
+nnoremap <leader><Space> :let _s=@/<bar>:let _w=winsaveview()<bar>:%s/\s\+$//e<bar>:let @/=_s<bar>:call winrestview(_w)<CR>
 " Move line mappings
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -17,20 +18,48 @@ nnoremap <A-k> <C-w><C-k>
 nnoremap <A-l> <C-w><C-l>
 
 filetype plugin indent on
-set textwidth=76
+"set textwidth=76
 
 autocmd FileType * set ts=2 sw=2 et
 autocmd FileType make setlocal ts=8 sw=0 noet
 autocmd FileType python set ts=4 sw=4
 autocmd FileType lua set ts=4 sw=4
 autocmd FileType go set ts=8 sw=0 noet
+autocmd FileType html set ts=4 sw=4
 
 syntax on
 set encoding=utf8
 
-" Close file and open directory tree
-map <leader>t :e .<CR>
-map <leader>T :e! .<CR>
+" IDE mode
+let g:netrw_liststyle = 3
+function! LoadDirTree()
+  28vnew
+  let g:netrw_chgwin = winnr() + 1
+  edit .
+endfunction
+function! LoadIDEMode()
+  call LoadDirTree()
+endfunction
+map <leader>T :call LoadDirTree()<CR>
+
+" Line numbers
+function! SetLineNumbers()
+  if winwidth(0) > 84
+    set number
+  else
+    set nonumber
+  endif
+endfunction
+autocmd WinEnter * call SetLineNumbers()
+autocmd WinLeave * call SetLineNumbers()
+
+" Line styling
+highlight LineNr ctermbg=234
+highlight CursorLineNr ctermbg=233
+highlight CursorLine cterm=none
+autocmd FileType netrw hi CursorLine cterm=underline
+autocmd FileType netrw au BufEnter <buffer> hi CursorLine cterm=underline
+autocmd FileType netrw au BufLeave <buffer> hi CursorLine cterm=none
 
 " Enable statusline
 set ls=2
@@ -47,7 +76,7 @@ let g:user_emmet_leader_key = '<C-e>'
 " nvim-specific config
 if has('nvim')
   set splitbelow
-  set bufhidden=delete
+  "set bufhidden=delete
   tnoremap <Esc> <C-\><C-n>
 
   tmap <A-h> <Esc><A-h>
