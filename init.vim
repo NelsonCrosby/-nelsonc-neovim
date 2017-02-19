@@ -1,9 +1,10 @@
 execute pathogen#infect()
 set modeline number cursorline
 
-inoremap jk <ESC>
+"inoremap jk <ESC>
 nnoremap <ESC><ESC> :nohlsearch<CR>
 nnoremap <leader><Space> :let _s=@/<bar>:let _w=winsaveview()<bar>:%s/\s\+$//e<bar>:let @/=_s<bar>:call winrestview(_w)<CR>
+command BYE wqall
 " Move line mappings
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -24,6 +25,7 @@ autocmd FileType * set ts=2 sw=2 et
 autocmd FileType make setlocal ts=8 sw=0 noet
 autocmd FileType python set ts=4 sw=4
 autocmd FileType lua set ts=4 sw=4
+autocmd FileType c,cpp set ts=4 sw=4
 autocmd FileType go set ts=8 sw=0 noet
 autocmd FileType html set ts=4 sw=4
 
@@ -64,9 +66,8 @@ autocmd FileType netrw au BufLeave <buffer> hi CursorLine cterm=none
 " Enable statusline
 set ls=2
 " Statusline symbols
-if has('gui_running')
-  let g:airline_powerline_fonts = 1
-endif
+if has('gui_running') | let g:airline_powerline_fonts = 1 | endif
+if exists('$POWERLINE_FONTS') | let g:airline_powerline_fonts = 1 | endif
 
 " Emmet
 let g:user_emmet_install_global = 0
