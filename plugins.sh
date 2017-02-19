@@ -8,13 +8,15 @@ _plugins_update () {
     plugins=($(ls repo))
   fi
 
-  local branch='master' failures=()
+  local failures=()
   for plugin in "${plugins[@]}"; do
     (
+      local submodule="repo/$plugin"
+      local branch="$(git config -f .gitmodules "submodule.$submodule.branch")"
+      [ -z "$branch" ] && echo "=== No update path for $plugin ===" && exit 0
+
       echo "=== Updating $plugin ($branch) ==="
-      cd "repo/$plugin"
-      git checkout "$branch"
-      git pull
+      git submodule update --remote "$submodule"
     ) || {
       failures+=("$plugin")
       echo '=== Update failed! ==='
