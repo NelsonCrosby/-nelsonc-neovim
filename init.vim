@@ -27,11 +27,12 @@ autocmd FileType make setlocal ts=8 sw=0 noet
 autocmd FileType conf,gitconfig set ts=8 sw=0 noet
 autocmd FileType html set ts=4 sw=4
 
-autocmd FileType python set ts=4 sw=4
-autocmd FileType lua set ts=4 sw=4
 autocmd FileType c,cpp set ts=4 sw=4
+autocmd FileType lua set ts=4 sw=4
 autocmd FileType go set ts=8 sw=0 noet
+autocmd FileType python set ts=4 sw=4
 
+let g:is_posix=1
 syntax on
 set encoding=utf8
 
