@@ -15,7 +15,7 @@ autocmd FileType conf,gitconfig set ts=8 sw=0 noet
 autocmd FileType go set ts=8 sw=0 noet
 autocmd FileType make setlocal ts=8 sw=0 noet
 " 4-wide soft tabs
-autocmd FileType c,cpp set ts=4 sw=4
+autocmd FileType c,cpp,lex,yacc set ts=4 sw=4
 autocmd FileType html set ts=4 sw=4
 autocmd FileType lua set ts=4 sw=4
 autocmd FileType python set ts=4 sw=4
